@@ -10,12 +10,13 @@ const debounce = require('lodash.debounce');
 refs.input.addEventListener('input', debounce(inputCountry, 500));
 
 function inputCountry(event) {
+  event.preventDefault();
   clearCountryCard();
   const searchQuery = event.target.value.trim();
   if (searchQuery) {
     API.fetchCountries(searchQuery)
       .then(country => {
-        // console.log(country.length);
+        console.log(country);
         if (country.length === 1) {
           renderCountry(country, countryCard);
           successRequest();
@@ -47,24 +48,24 @@ function clearCountryCard() {
 function tooManyMatches() {
   error({
     text: 'Too many matches found. Please enter a more specific query!',
-    delay: 1000,
+    delay: 2000,
   });
 }
 function notValidName() {
   error({
     text: 'Something went wrong! Please enter a valid country name!',
-    delay: 1000,
+    delay: 2000,
   });
 }
 function moreSpecificQuery() {
   alert({
     text: 'Please enter a more specific query!',
-    delay: 1000,
+    delay: 2000,
   });
 }
 function successRequest() {
   success({
     text: 'Congratulations! You found the country.',
-    delay: 1000,
+    delay: 2000,
   });
 }
