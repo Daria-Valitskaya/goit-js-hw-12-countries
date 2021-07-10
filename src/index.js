@@ -49,24 +49,20 @@ function clearCountryCard() {
 function tooManyMatches() {
   error({
     text: 'Too many matches found. Please enter a more specific query!',
-    delay: 2000,
   });
 }
 function notValidName() {
   error({
     text: 'Something went wrong! Please enter a valid country name!',
-    delay: 2000,
   });
 }
 function moreSpecificQuery() {
   alert({
     text: 'Please enter a more specific query!',
-    delay: 2000,
   });
 }
 function successRequest() {
   success({
     text: 'Congratulations! You found the country.',
-    delay: 2000,
   });
 }
