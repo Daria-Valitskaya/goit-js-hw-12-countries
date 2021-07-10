@@ -1,10 +1,10 @@
-{{#each this}}
+
 <div class='country-card'>
 <h1 class="country-name">{{name}}</h1>
 <ul class='country-info'>
-<li class='country-info-point'>Capital: {{capital}}</li>
-<li class='country-info-point'>Population: {{population}}</li>
-<li class='country-info-point'>Languages: 
+<li class='country-info-point'><b>Capital:</b> {{capital}}</li>
+<li class='country-info-point'><b>Population:</b> {{population}}</li>
+<li class='country-info-point'><b>Languages:</b> 
     <ul class="country-languages">
         {{#each languages}}
         <li class="lng-item">{{this.name}}</li>
@@ -12,5 +12,3 @@
 </ul>
 <img class='country-flag' src='{{flag}}' alt='{{name}}'>
 </div>
-
-{{/each}}

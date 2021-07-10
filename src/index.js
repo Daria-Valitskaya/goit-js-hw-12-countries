@@ -20,6 +20,7 @@ function inputCountry(event) {
         if (country.length === 1) {
           renderCountry(country, countryCard);
           successRequest();
+          refs.input.value = '';
         } else if (country.length <= 10) {
           renderCountry(country, countryNames);
           moreSpecificQuery();
