@@ -10,7 +10,6 @@ const debounce = require('lodash.debounce');
 refs.input.addEventListener('input', debounce(inputCountry, 500));
 
 function inputCountry(event) {
-  event.preventDefault();
   clearCountryCard();
   const searchQuery = event.target.value.trim();
   if (searchQuery) {
