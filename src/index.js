@@ -15,7 +15,6 @@ function inputCountry(event) {
   if (searchQuery) {
     API.fetchCountries(searchQuery)
       .then(country => {
-        console.log(country);
         if (country.length === 1) {
           renderCountry(country, countryCard);
           successRequest();
@@ -38,8 +37,8 @@ function inputCountry(event) {
   }
 }
 
-function renderCountry(countries, hds) {
-  const markup = countries.map(count => hds(count)).join('');
+function renderCountry(countries, hbs) {
+  const markup = countries.map(hbs).join('');
   refs.countryCard.innerHTML = markup;
 }
 function clearCountryCard() {
